@@ -1,0 +1,412 @@
+Basic Data Types
+
+Python Data Types
+ float - real numbers
+ int - integer numbers
+ str - string, text
+ bool - True, False
+
+Variable Assignment
+In Python, a variable allows you to refer to a value with a name. To create a variable x with a value of 5, you use =, like this example:
+x = 5 
+print(type(x)) -> int
+half = 0.5
+print(type(half)) => 'float'
+
+intro = "Hello! How are you?"
+print(type(intro)) -> 'str'
+
+is_good = True
+print(type(is_good)) -> ‘bool’
+
+# Calculations with variables
+monthly_savings = 10
+num_months = 4
+
+new_savings = monthly_savings * num_months
+
+Data Structures 
+	
+	list
+A list is a compound data type; you can group values together, like this:
+a = "is"
+b = "nice"
+my_list = ["my", "list", a, b]
+hall = 11.25
+kit = 18.0
+liv = 20.0
+bed = 10.75
+bath = 9.50
+
+# Create list areas
+areas = [hall, kit, liv, bed, bath]
+
+# Print areas
+print(areas)  => [11.25, 18.0, 20.0, 10.75, 9.5]
+
+hall = 11.25
+kit = 18.0
+liv = 20.0
+name = "Capgemini"
+year = 2024
+
+[11.25, 18.0, 20.0, 'Capgemini', 2024]
+
+Set. 
+Set is an unordered collection with no duplicate items
+
+
+
+
+[['liz', 1.73], ['emma', 1.68], ['mom', 1.71], ['dad', 1.89]]
+
+Subsetting List
+ 
+fam = ["liz", 1.73, "emma", 1.68, "mom", 1.71, "dad", 1.89] 
+fam[3] => 1.68
+
+fam[-1]=> 1.89
+
+List Slicing
+
+fam[3:5] => [1.68, 'mom']
+fam[:4] => ['liz', 1.73, 'emma', 1.68] # it will start from 0 -- < 4 index
+
+fam[5:] => [1.71, 'dad', 1.89] # start index at 5 and end till last
+
+# Adding and removing elements
+
+fam + ["me", 1.79] => ['lisa', 1.74,'emma', 1.68, 'mom', 1.71, 'dad', 1.86, 'me', 1.79]
+
+del fam[2] => ['lisa', 1.74, 1.68, 'mom', 1.71, 'dad', 1.86]
+
+
+DICT
+
+SETS
+
+
+iterable objects or Iterables 
+What are iterable Objects
+
+Definition
+iterable objects / Iterables - any object that can be used in a
+
+
+represent any object that can be used in a for loop, meaning that it stores an element sequence. :'
+list, 
+tuple, 
+set, 
+dictionary,
+and string.
+
+droids = ['R2-D2', 'TC-16', 'C-3PO'] 
+for droid in droids:
+	print(droid)
+
+# string 
+company = 'Capgemini'
+for char in string:
+	print(char) => 
+
+episodes = {
+'Episode I': 'The Phantom Menace'
+'Episode II': 'Attack of the Clones',
+'Episode III': 'Revenge of the Sith', 
+}
+
+for item in episodes.items():
+	print(item)
+
+interval = range(0, 10) 
+for num in interval:
+	print(num)
+
+list comprehension: List comprehension is a special way to define a list.
+
+Often described as more Pythonic
+A single tool that you can use in many different situations
+
+You should use list comprehensions instead of loops when you want concise, readable code that performs transformations or filtering.
+You add conditional logic to a list comprehension by including an if statement within the comprehension.
+A list comprehension can be faster than a for loop because it’s optimized for performance by Python’s internal mechanisms.
+
+
+New_list_1 = [expression for member in iterable]
+New_list_2 = [expression for member in iterable (if conditional)]
+
+example:
+prices = [1.09, 23.56, 57.84, 4.56, 6.78]
+TAX_RATE = .08
+def get_price_with_tax(price):
+    return price * (1 + TAX_RATE)
+
+
+final_prices = [get_price_with_tax(price) for price in prices]
+final_prices
+[1.1772000000000002, 25.4448, 62.467200000000005, 4.9248, 7.322400000000001]
+
+
+sentence = "the rocket came back from mars"
+[char for char in sentence if char in "aeiou"]
+['e', 'o', 'e', 'a', 'e', 'a', 'o', 'a']
+
+
+
+●	A set comprehension is almost exactly the same as a list comprehension in Python
+●	Set comprehensions make sure the output contains no duplicates
+●	You can create a set comprehension by using curly braces { } instead of brackets [ ]
+
+Check for DICT comprehensions.
+
+DICT
+
+# Creating Dictionaries From Iterables
+For a quick example, say that you have a list of fruits and 
+want to create a dictionary where the keys are the fruit names displayed in uppercase, 
+and the values represent the number of letters in each name:
+
+fruits = ["apple", "banana", "cherry"]
+
+{fruit.upper(): len(fruit) for fruit in fruits}
+{'APPLE': 5, 'BANANA': 6, 'CHERRY': 6}
+
+# Dict 
+example - you have a list of lists. Each nested list contains numbers. You want to create a dictionary that maps numbers to their square values. 
+matrix = [
+   [9, 3, 8, 3],
+   [4, 5, 2, 8],
+   [6, 4, 3, 1],
+   [1, 0, 4, 5],
+ ]
+
+{value: value**2 for row in matrix for value in row}
+{9: 81, 3: 9, 8: 64, 4: 16, 5: 25, 2: 4, 6: 36, 1: 1, 0: 0}
+
+Why Generaors?
+
+simple way to create a custom iterable object
+lazy initialization
+possibility to create infinite iterable objects
+
+
+Functions
+
+Piece of reusable code
+Solves particular task
+Call function instead of writing code yourself.
+
+In mathematics, a function is typically represented like this:
+z = f(x,y)
+
+define function:
+def <function_name>([<parameters>]):
+    <statement(s)>
+
+There are four types of arguments that Python UDFs can take:
+
+Default arguments- Default arguments are those that take a default value if no argument value is passed during the function call.
+def standard_defaults(x=1,y=2,z=3):
+	pass
+
+Required arguments - As the name kind of gives away, the required arguments of a UDF are those that have to be in there.
+ These arguments need to be passed during the function call and in precisely the right order, e.f def plus(a,b):
+
+Keyword arguments - If you want to make sure that you call all the parameters in the right order, 
+you can use the keyword arguments in your function call. You use these to identify the arguments by their parameter name.
+
+Variable number of arguments -In cases where you don’t know the exact number of arguments that you want to pass to a function, you can use the following syntax with *args
+
+
+fam = [1.73,1.68,1.71,1.89]
+
+e.g max(fam) => 1.89
+
+len(fam) => 4
+
+Assign function to variable.
+tallest = max(fam)  
+
+Inner Functions:
+It’s possible to define functions inside other functions.
+
+Example:
+
+def parent():
+    print("Printing from parent()")
+
+    def first_child():
+        print("Printing from first_child()")
+
+    def second_child():
+        print("Printing from second_child()")
+
+    second_child()
+    first_child()
+
+
+Output =>
+>>> parent()
+
+Printing from parent()
+Printing from second_child()
+Printing from first_child()
+
+Inner functions aren’t defined until the parent function is called. They’re locally scoped to parent(), meaning they only exist inside the parent() function as local variables. Try calling first_child(). You’ll get an error:
+
+>>> first_child()
+Traceback (most recent call last):
+  ...
+NameError: name 'first_child' is not defined
+
+Functions as Return Values
+
+Python also allows you to return functions from functions
+
+Example:
+def parent(num):
+    def first_child():
+        return "Hi, I'm Elias"
+
+    def second_child():
+        return "Call me Ester"
+
+    if num == 1:
+        return first_child => that means you’re returning a reference to the function first_child
+    else:
+        return second_child
+
+
+>>> first = parent(1)
+>>> second = parent(2)
+
+>>> first
+<function parent.<locals>.first_child at 0x7f599f1e2e18>
+
+>>> second
+<function parent.<locals>.second_child at 0x7f599dad5268>
+
+
+>>> first()
+'Hi, I'm Elias'
+
+>>> second()
+'Call me Ester'
+
+Decorators in Python:
+
+A decorator is a wrapper that you can place around a function that changes that function's behavior.
+You can modify the inputs, modify the outputs,
+
+def print_before_and_after(func):
+  def wrapper(*args):
+    print('Before {}'.format(func.__name__))
+    # Call the function being decorated with *args
+    func(*args)
+    print('After {}'.format(func.__name__))
+  # Return the nested function
+  return wrapper
+
+@print_before_and_after
+def multiply(a, b):
+  print(a * b)
+
+multiply(5, 10)
+
+
+Methods
+
+Suppose you want to get the index of the string "mom" in the fam list.
+fam.index("mom") 
+
+- Find out list Methods
+
+company = "capgemini'
+COMPANY = company.upper()
+
+- Find out str methods 
+
+
+Packages
+
+Packages
+Directory of Python Scripts
+Each script = module
+Specify functions, methods, types
+Thousands of packages available
+pandas
+Matplotlib 
+scikit-learn
+
+
+pkg1/
+mod1.py
+mod2.py
+
+Install Package
+
+https://pip.pypa.io/en/stable/installation/
+Download  get-pip.py
+Terminal:
+python3 get-pip.py
+pip3 install pandas
+
+
+Scopes:
+global
+local
+
+The global Keyward
+
+x = 7
+def foo():
+  x=43
+ print(x)
+
+
+foo()=> 43
+print(x) => 7
+-------------------
+
+x = 7
+def foo():
+  global x=43
+ print(x)
+	
+
+foo() => 43
+print(x) => 43
+--------------------
+
+Nonlocal Keyword:
+def foo():
+ x=10
+
+ def bar():
+  x = 200
+  print(x)
+
+ bar()
+ print(x)
+
+>>foo()
+
+200
+10
+
+def foo():
+ x=10
+
+ def bar():
+  nonlocal x
+  x = 200
+  print(x)
+
+ bar()
+ print(x)
+
+>>foo()
+
+200
+200
+  
